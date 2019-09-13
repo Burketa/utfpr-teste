@@ -47,6 +47,15 @@ public class PersonagemTest {
          when(armadura.getDefesa()).thenReturn(9);
          
          assertTrue(personagem.atacar(armadura));
-         verify(armadura, times(2)).getDefesa();
+     }
+     
+     @Test
+     public void errrouAtaqueTest()
+     {
+         when(arma.getAtaque()).thenReturn(1);
+         when(arma.getNivelBase()).thenReturn(0);
+         when(armadura.getDefesa()).thenReturn(100);
+         
+         assertFalse(personagem.atacar(armadura));
      }
 }
